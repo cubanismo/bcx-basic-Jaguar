@@ -1053,17 +1053,14 @@ for map=0 to no_maps-1
             c=maps[map*map_height+y][x]
             tilex=(c % map_width)
             tiley=(c/map_width)
-            for i=0 to 7
-                ' Our tiles are 16x8 big in 4bpp mode, which means they are 8 bytes wide in RAM. Hence we need 2 LPOKEs per line.
-                 lpoke strptr(scrbuf)+y*(dest_screen_width_in_bytes*tile_height)+x*tile_width_in_bytes+i*dest_screen_width_in_bytes,lpeek(strptr(tiles)+tilex*tile_width_in_bytes+tiley*(src_screen_width_in_bytes*tile_height)+i*src_screen_width_in_bytes)
-                 lpoke strptr(scrbuf)+y*(dest_screen_width_in_bytes*tile_height)+x*tile_width_in_bytes+i*dest_screen_width_in_bytes+4,lpeek(strptr(tiles)+tilex*tile_width_in_bytes+tiley*(src_screen_width_in_bytes*tile_height)+i*src_screen_width_in_bytes+4)
-            next i
+            drawtile(x,y)
         next x
     next y
 
     'Bring the map to screen
     for ph=0 to pi/2 step pi/90/2
         rlist[1].x=(352-sin(ph)*336)*65536
+        rlist[1].y=(30+sin(ph*4)*10)*65536
         vsync
     next i
     
@@ -1083,3 +1080,14 @@ next map
 do
 vsync
 loop
+
+' Draws a 16 x map_height tile on screen.
+' x is multiplied by map_width and y is multiplied by map_height
+
+sub drawtile(x as SHORT, y as SHORT)
+    for i=0 to map_height-1
+        ' Our tiles are 16x8 big in 4bpp mode, which means they are 8 bytes wide in RAM. Hence we need 2 LPOKEs per line.
+         lpoke strptr(scrbuf)+y*(dest_screen_width_in_bytes*tile_height)+x*tile_width_in_bytes+i*dest_screen_width_in_bytes,lpeek(strptr(tiles)+tilex*tile_width_in_bytes+tiley*(src_screen_width_in_bytes*tile_height)+i*src_screen_width_in_bytes)
+         lpoke strptr(scrbuf)+y*(dest_screen_width_in_bytes*tile_height)+x*tile_width_in_bytes+i*dest_screen_width_in_bytes+4,lpeek(strptr(tiles)+tilex*tile_width_in_bytes+tiley*(src_screen_width_in_bytes*tile_height)+i*src_screen_width_in_bytes+4)
+    next i
+end sub

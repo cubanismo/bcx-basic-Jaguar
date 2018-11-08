@@ -1,3 +1,6 @@
+- Added Barbarian Apple II source code with the kind permission of its author.
+- Changed drawing of tiles in project drawmap to a subroutine, added vertical movement when map appears
+- Added missing file in project crytest.
 - Fixed BMP import in a few cases
 - Added Barbarian PC source code with the kind permission of its author.
 - Added Barbarian Amiga source code with the kind permission of its author.

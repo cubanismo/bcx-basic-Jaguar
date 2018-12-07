@@ -33,22 +33,22 @@
 
 ' End of file.
 
+'rom,son_1,sfx_mlaw,assets\SFX\themePC.wav
+rom,sfx_theme,raw_binary_import,assets\SFX\themePC.ul
 
-'rom,son_1,sfx_mlaw,assets\SFX\themeAPPLEII.ogg 
-rom,sfx_theme,raw_binary_import,assets\SFX\themeAPPLEII.ul
-'abs,son_1,sfx_mlaw,assets\SFX\themeAPPLEII.wav
-
-
-abs,sfx_epee,modfile,assets\SFX\epee.ul
-abs,sfx_touche,modfile,assets\SFX\tombe.ul
-abs,sfx_tete,modfile,assets\SFX\tete.ul
-abs,sfx_decapite,modfile,assets\SFX\decapite.ul
-abs,sfx_cling,modfile,assets\SFX\cling2.ul
-abs,sfx_pied,modfile,assets\SFX\coupdetete.ul
-'abs,sfx_theme,modfile,assets\SFX\themeAPPLEII.ul
+'abs,son_1,sfx_mlaw,assets\SFX\touche2.wav
 
 
-abs,decorsAPPLEII,gfx_clut,assets\GFX\decor\APPLEII.bmp
+abs,sfx_epee,modfile,assets\SFX\epeePC.ul
+abs,sfx_touche,modfile,assets\SFX\touchePC.ul
+abs,sfx_tete,modfile,assets\SFX\tetePC.ul
+abs,sfx_decapite,modfile,assets\SFX\decapitePC.ul
+abs,sfx_cling,modfile,assets\SFX\clingPC.ul
+abs,sfx_pied,modfile,assets\SFX\touchePC.ul
+
+
+
+abs,decorsPC,gfx_clut,assets\GFX\decor\PC.bmp
 abs,SPRserpent,gfx_clut,assets\GFX\decor\serpent.bmp
 abs,SPRmode,gfx_clut,assets\GFX\decor\mode.bmp
 

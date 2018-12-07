@@ -289,7 +289,8 @@ DO
 		IF loading = 0 THEN	
 			temps = 0: loading = 1
 			' lancer la musique
-			IF musiqueLOOP = 0 THEN SNDZEROPLAY(1, strptr(sfx_theme), (strptr(sfx_theme_end)-strptr(sfx_theme)+3) and 0xfffffffc, 46168/9233, Zero_Audio_8bit_muLaw|0)
+			SNDZEROPLAY(1, (void *)(sfx_theme), (sfx_theme_end-sfx_theme)+3 and 0xfffffffc, 46168/7694, Zero_Audio_8bit_muLaw|0)
+			' speed of sfx at 46168/11542 for emulators
 		END IF
 			
 
@@ -297,7 +298,7 @@ DO
 			' affichage du titre + attente de la fin de la musique
 			temps=temps+1
 			'RLOCATE 128,4: RPRINTINT temps
-			if temps > 2977 THEN temps = 0: loading = 0: GOTOU = 8
+			if temps > 5250 THEN temps = 0: loading = 0: GOTOU = 8
 			IF zero_left_pad band Input_Pad_Option THEN temps = 0: loading = 0: GOTOU = 8
 		END IF
 
@@ -547,18 +548,18 @@ sonrigole = 0
 	
 		'                    ************* mise en boucle de la musique ************	
     
-		IF toucheMUSIQUE = 1 AND delaiMUSIQUE > 15 THEN
-			IF musiqueLOOP = 0 THEN
-				musiqueLOOP = 1: delaiMUSIQUE = 0
-				SNDZEROPLAY(1, strptr(sfx_theme), (strptr(sfx_theme_end)-strptr(sfx_theme)+3) and 0xfffffffc, 46168/9233, Zero_Audio_8bit_muLaw|Zero_Audio_Looping)
-			END IF
-		END IF
-		IF toucheMUSIQUE = 1 AND delaiMUSIQUE > 15 THEN
-			IF musiqueLOOP = 1 THEN 
-				musiqueLOOP = 0: delaiMUSIQUE = 0
-				SNDZEROPLAY(1, 0, 0, 0, 0) ' pour aretter les sons
-			END IF		
-		END IF
+		'IF toucheMUSIQUE = 1 AND delaiMUSIQUE > 15 THEN
+		'	IF musiqueLOOP = 0 THEN
+		'		musiqueLOOP = 1: delaiMUSIQUE = 0
+		'		SNDZEROPLAY(1, strptr(sfx_theme), (strptr(sfx_theme_end)-strptr(sfx_theme)+3) and 0xfffffffc, 46168/9233, Zero_Audio_8bit_muLaw|Zero_Audio_Looping)
+		'	END IF
+		'END IF
+		'IF toucheMUSIQUE = 1 AND delaiMUSIQUE > 15 THEN
+		'	IF musiqueLOOP = 1 THEN 
+		'		musiqueLOOP = 0: delaiMUSIQUE = 0
+		'		SNDZEROPLAY(1, 0, 0, 0, 0) ' pour aretter les sons
+		'	END IF		
+		'END IF
 	
 	END IF
 

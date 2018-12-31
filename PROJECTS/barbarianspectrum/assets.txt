@@ -1,0 +1,78 @@
+' rB+ assets file.
+'
+' This is where we tell rB+ to load in our graphics and sounds etc.
+'
+' Firstly, all these lines are comments and are not useful to the build process.
+' To be exact, all lines starting with the characters ";", "#", "'", "*" are considered to be comments.
+' 
+' Each non-comment assets.txt line is considered to have 4 comma separated strings of text like the following:
+' A,B,C,D
+' | | | +-- Filename of the asset, relative to the project folder (i.e. assets\gfx\background.bmp)
+' | | +---- Tells the build process if the file should just be imported as is or some conversion is needed beforehand. See below for details.
+' | +------ Name asset which is exposed to rb+. Actually two variables are exposed to rb+: name and name_end which holds the start and end addresses of the asset.
+' |         Names may start with an uppercase or lowercase letter (A-Z a-z), an underscore (_), a question mark (?) or a period (.).
+' +-------- This should either be ABS or ROM. This tells the build process if you want the asset to be included in RAM or ROM.
+'
+' Parameter C explained further:
+' - This can be any text if you have some asset that you want imported in rb+ as is (for example a converted raw sample or a backdrop). For this you can put any text in C.
+' - For graphics conversion you can use "gfx_clut" or "gfx_noclut" to convert a .BMP file into jaguar raw format and optionally export the paletter or not (clut=yes, noclut=no).
+'   This applies to 1-, 2-, 4- and 8-bit graphics only.
+'   For 16-bit and 24-bit graphics no clut is created (because there isn't a need for one).
+'   Finally for 16-bit images you have to use gfx_clut16 or gfx_noclut16.
+' - For conversion to CRY mode use "gfx_cry".
+' - For audio files you can use "sfx_rawXXXXX" to convert any audio file (for example .wav, .mp3, .ogg, etc) into raw format.
+'   You can optionally set XXXXX to be the desired sample rate, otherwise 8000Hz is used by default.
+' - If you want the audio files to be compressed using u-law then use "sfx_mlawXXXX" instead (note - this requires Zerosquare's player!)
+' - Rmotion scripts should be placed here, use "rmotion".
+' - Finally, if you want an asset packed, append a "_pack" suffix. For example "gfx_noclut_pack". 
+'   Note that rmotion scripts and CLUTs aren't packed for now.
+'   Also note that it's your responsibility to reserve RAM for unpacking as well as running powaunpack to unpack the asset.
+'
+' That's all, have fun!
+'
+
+' End of file.
+
+
+'rom,son_1,sfx_mlaw,assets\SFX\themeZX.ogg 
+rom,sfx_theme,raw_binary_import,assets\SFX\themeZX.ul
+
+
+
+'abs,son_1,sfx_mlaw,assets\SFX\sorcier.wav
+
+abs,sfx_cling,modfile,assets\SFX\cling.ul
+abs,sfx_decapite,modfile,assets\SFX\decapite.ul
+abs,sfx_points,modfile,assets\SFX\points.ul
+abs,sfx_tombe,modfile,assets\SFX\tombe.ul
+abs,sfx_touche,modfile,assets\SFX\touche.ul
+abs,sfx_sorcier,modfile,assets\SFX\sorcier.ul
+
+
+
+abs,decorsZX,gfx_clut,assets\GFX\decor\ZX.bmp
+abs,menuZX,gfx_clut,assets\GFX\decor\menu.bmp
+abs,SPRfleche,gfx_clut,assets\GFX\decor\fleche.bmp
+abs,SPRcouleurs,gfx_clut,assets\GFX\decor\couleurs.bmp
+
+abs,SPRserpentD,gfx_clut,assets\GFX\decor\serpent2.bmp
+abs,SPRserpentG,gfx_clut,assets\GFX\decor\serpent1.bmp
+
+
+abs,arbresGAUCHE,gfx_clut,assets\GFX\decor\arbresG.bmp
+abs,arbresDROIT,gfx_clut,assets\GFX\decor\arbresD.bmp
+abs,cache,gfx_clut,assets\GFX\decor\cache.bmp
+
+abs,SPRgnome,gfx_clut,assets\GFX\sprites\gnomes.bmp
+abs,SPRfeusang,gfx_clut,assets\GFX\sprites\feusang.bmp
+abs,SPRtetes,gfx_clut,assets\GFX\sprites\tetes.bmp
+
+abs,paletteA1,gfx_clut,assets\GFX\sprites\playerA1.bmp
+abs,paletteA2,gfx_clut,assets\GFX\sprites\playerA2.bmp
+abs,paletteA3,gfx_clut,assets\GFX\sprites\playerA3.bmp
+
+abs,paletteB1,gfx_clut,assets\GFX\sprites\playerB1.bmp
+abs,paletteB2,gfx_clut,assets\GFX\sprites\playerB2.bmp
+abs,paletteB3,gfx_clut,assets\GFX\sprites\playerB3.bmp
+
+abs,spritesAB,gfx_clut,assets\GFX\spritesAB\sprites8BIT.bmp

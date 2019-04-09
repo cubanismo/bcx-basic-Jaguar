@@ -71,7 +71,7 @@ for int i = 0 to 79
     linescol[i] = gfxlineb1
 next i
 
-powaset(linestart,R_sprite_x,80,strptr(linesx))
+powaset(linestart,8,80,strptr(linesx)) '8=R_sprite_x, look in raptor.h
 
         
 'Set player at middle of map, looking to angle 0.
@@ -201,9 +201,9 @@ SUB DRAWMAZE
     next ray
     
     'Push all graphic values for the 80 vertical screen slices
-    powaset(linestart,R_sprite_y,80,strptr(linesy))             'Top of slices
+    powaset(linestart,12,80,strptr(linesy))                     'Top of slices (12=R_sprite_y, look in raptor.h)
     powaset(linestart,R_sprite_height,80,strptr(linesy2))       'Length of slice
-    powaset(linestart,R_sprite_gfxbase,80,strptr(linescol))     'slice graphic (colour)
+    powaset(linestart,44,80,strptr(linescol))     'slice graphic (colour) (44=R_sprite_gfxbase, look at raptor.h)
     
 END SUB
 

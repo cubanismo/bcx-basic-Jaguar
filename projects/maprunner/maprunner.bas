@@ -101,8 +101,8 @@ FOR loopx = 0 TO viewportmaxx
         i++
     NEXT        
 NEXT
-powaset(sand,R_sprite_x,100,strptr(mapx))   
-powaset(sand,R_sprite_y,100,strptr(mapy))   
+powaset(sand,8,100,strptr(mapx))    '(8=R_sprite_x, look in raptor.h)
+powaset(sand,12,100,strptr(mapy))   '(12=R_sprite_x, look in raptor.h)
 
 
 
@@ -170,8 +170,8 @@ SUB updatemap
         NEXT        
     NEXT
     
-    powaset(sand,R_sprite_gfxbase,100,strptr(mapgfx))   
-    powaset(sand,R_sprite_CLUT,100,strptr(mapclut)) 
+    powaset(sand,44,100,strptr(mapgfx))  '(44=R_sprite_gfxbase, look in raptor.h)
+    powaset(sand,96,100,strptr(mapclut)) '(96=R_sprite_CLUT, look in raptor.h)
 
 END SUB
 

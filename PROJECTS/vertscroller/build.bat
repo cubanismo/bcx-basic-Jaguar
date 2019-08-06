@@ -1,0 +1,2 @@
+cd ..\..\
+call build vertscroller

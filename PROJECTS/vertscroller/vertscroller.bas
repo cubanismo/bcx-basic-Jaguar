@@ -154,7 +154,7 @@ do
 
     rlist[0].y=object_y
 
-    if (object_y band (7<<16))=0 then
+    if (object_y band ((7<<16)|0xffff))=0 then
         rlocate 0,scroller_y_to_print
         rprint scroller_text[current_scroller_line]
         rlocate 0,scroller_y_to_print+240
@@ -169,7 +169,7 @@ do
         endif
     endif
 
-    object_y=object_y-(1<<16)
+    object_y=object_y-(1<<15)
     if object_y=-(240<<16) then
         object_y=0
     endif

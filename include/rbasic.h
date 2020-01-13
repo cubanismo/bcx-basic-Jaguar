@@ -122,6 +122,7 @@ extern void cls(void) asm ("_cls");
 extern void MODVOL(int volume) asm ("_MODVOL");
 extern void SNDVOL(int volume) asm ("_SNDVOL");
 char *ee_printf(const char *fmt, ...) asm ("ee_printf");
+void ee_sprintf(char * buf, const char *fmt, ...) asm ("_ee_sprintf");
 void SNDKILL(int v) asm("SNDKILL");
 void SNDDELTA(int v,int x) asm("SNDDELTA");
 void SNDFREQ(int v,int y) asm("SNDFREQ");

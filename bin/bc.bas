@@ -15693,7 +15693,7 @@ SUB RunTimeFunctions
     FPRINT Outfile,"char *str (float d)"
     FPRINT Outfile,"{"
     FPRINT Outfile,"  register char *strtmp = BCX_TmpStr(16);"
-    FPRINT Outfile,"  ee_printf(strtmp,";D1$;",d);"
+    FPRINT Outfile,"  ee_sprintf(strtmp,";D1$;",d);"
     FPRINT Outfile,"  return strtmp;"
     FPRINT Outfile,"}\n\n"
     IF Use_Library THEN FPRINT Outfile,"// ENDBCXRTLIB "

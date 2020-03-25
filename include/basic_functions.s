@@ -5,7 +5,7 @@
 hiscore_sort:
 	link.w %fp,#0
 #APP
-| 126 "basic_functions.c" 1
+| 129 "basic_functions.c" 1
 		move.l d1,-(a7)
 	move.l 8(a6),d1
 	jsr RAPTOR_resort_score_table
@@ -19,13 +19,13 @@ hiscore_sort:
 fullpowablitlist:
 	link.w %fp,#0
 #APP
-| 134 "basic_functions.c" 1
+| 137 "basic_functions.c" 1
 	movem.l d0-a5,-(sp)                               
 	move.l 8(a6),a0                                   
-	move.l RUPDALL_FLAG,-(sp)	|save update flag      
-	move.l #0,RUPDALL_FLAG		|disable auto update   
+	move.l RUPDALL_FLAG,-(sp)  |save update flag      
+	move.l #0,RUPDALL_FLAG     |disable auto update   
 	jsr RAPTOR_blitter_full                           
-	move.l (sp)+,RUPDALL_FLAG	|restore update flag   
+	move.l (sp)+,RUPDALL_FLAG  |restore update flag   
 	movem.l (sp)+,d0-a5                               
 	
 | 0 "" 2
@@ -37,7 +37,7 @@ fullpowablitlist:
 powaeeprom:
 	link.w %fp,#0
 #APP
-| 146 "basic_functions.c" 1
+| 149 "basic_functions.c" 1
 		movem.l d1-a5,-(sp)                                                   
 	move.l 12(a6),a0                                                                  
 	tst.l 8(a6)                                                                       
@@ -61,13 +61,13 @@ powaeeprom:
 powablitlist:
 	link.w %fp,#0
 #APP
-| 164 "basic_functions.c" 1
+| 167 "basic_functions.c" 1
 	movem.l d0-a5,-(sp)                               
 	move.l 8(a6),a0                                   
-	move.l RUPDALL_FLAG,-(sp)	|save update flag      
-	move.l #0,RUPDALL_FLAG		|disable auto update   
+	move.l RUPDALL_FLAG,-(sp)  |save update flag      
+	move.l #0,RUPDALL_FLAG     |disable auto update   
 	jsr RAPTOR_blitter                                
-	move.l (sp)+,RUPDALL_FLAG	|restore update flag   
+	move.l (sp)+,RUPDALL_FLAG  |restore update flag   
 	movem.l (sp)+,d0-a5                               
 	
 | 0 "" 2
@@ -213,7 +213,7 @@ rbsort:
 powaunpack:
 	link.w %fp,#0
 #APP
-| 283 "basic_functions.c" 1
+| 286 "basic_functions.c" 1
 		movem.l d0-d7/a0-a6,-(sp)                                             
 	move.l 8(a6),a0                                                                  
 	move.l 12(a6),a1                                                                  
@@ -428,7 +428,7 @@ powaunpack:
 powabzap:
 	link.w %fp,#0
 #APP
-| 493 "basic_functions.c" 1
+| 496 "basic_functions.c" 1
 		movem.l d0/d1/a0,-(sp)
 	|movem.l 8(a6),d0/d1/d2/a0
 	|move.l %d0,%d3 |multiply by 188, courtesy of gcc
@@ -476,7 +476,7 @@ powabzap:
 powabdiff:
 	link.w %fp,#0
 #APP
-| 534 "basic_functions.c" 1
+| 537 "basic_functions.c" 1
 		movem.l d0/d1/d2/a0/a1,-(sp)
 	|movem.l 8(a6),d0/d1/d2/a0
 	|move.l %d0,%d3 |multiply by 188, courtesy of gcc
@@ -524,7 +524,7 @@ powabdiff:
 powabset:
 	link.w %fp,#0
 #APP
-| 575 "basic_functions.c" 1
+| 578 "basic_functions.c" 1
 		movem.l d0/d1/a0/a1,-(sp)
 	|movem.l 8(a6),d0/d1/d2/a0
 	||move.l %d0,%d3 |multiply by 188, courtesy of gcc
@@ -573,7 +573,7 @@ powabset:
 powazap:
 	link.w %fp,#0
 #APP
-| 618 "basic_functions.c" 1
+| 621 "basic_functions.c" 1
 		movem.l d0/d1/a0,-(sp)
 	|movem.l 8(a6),d0/d1/d2/a0
 	|move.l %d0,%d3 |multiply by 188, courtesy of gcc
@@ -620,7 +620,7 @@ powazap:
 powadiff:
 	link.w %fp,#0
 #APP
-| 658 "basic_functions.c" 1
+| 661 "basic_functions.c" 1
 		movem.l d0/d1/d2/d3/a0/a1,-(sp)
 	|movem.l 8(a6),d0/d1/d2/a0
 	|move.l %d0,%d3 |multiply by 188, courtesy of gcc
@@ -667,7 +667,7 @@ powadiff:
 powaset:
 	link.w %fp,#0
 #APP
-| 698 "basic_functions.c" 1
+| 701 "basic_functions.c" 1
 		movem.l d0/d1/d2/d3/a0/a1,-(sp)
 	|movem.l 8(a6),d0/d1/d2/a0
 	||move.l %d0,%d3 |multiply by 188, courtesy of gcc
@@ -715,7 +715,7 @@ powaset:
 bin2asc:
 	link.w %fp,#0
 #APP
-| 740 "basic_functions.c" 1
+| 743 "basic_functions.c" 1
 		movem.l d1/d4/a0,-(sp)
 	movem.l 8(a6),d1/d4/a0
 	jsr RAPTOR_HEXtoDEC
@@ -731,7 +731,7 @@ bin2asc:
 RBRA:
 	link.w %fp,#0
 #APP
-| 749 "basic_functions.c" 1
+| 752 "basic_functions.c" 1
 		movem.l d0-d3/a6,-(sp) |lolol
 	movem.l 8(a6),d0-d3
 	jsr RAPTOR_setup_object_bra
@@ -746,7 +746,7 @@ RBRA:
 ZEROPAD:
 	link.w %fp,#0
 #APP
-| 757 "basic_functions.c" 1
+| 760 "basic_functions.c" 1
 		movem.l d0-d4,-(sp)
 	jsr Input_Read
 	movem.l d0-d4,zero_left_pad
@@ -761,7 +761,7 @@ ZEROPAD:
 hiscore_check:
 	link.w %fp,#0
 #APP
-| 765 "basic_functions.c" 1
+| 768 "basic_functions.c" 1
 		move.l 8(a6),d0
 	move.l 12(a6),a0
 	movem.l d1/d2/d3/d4/d5/d6/d7/a1/a2/a3/a4/a5,-(sp)
@@ -779,14 +779,14 @@ hiscore_check:
 SNDZEROPLAY:
 	link.w %fp,#0
 #APP
-| 776 "basic_functions.c" 1
+| 779 "basic_functions.c" 1
 	movem.l d0/a0/d1/d2/d3,-(a7)
-	move.l	8(a6),d0
-	move.l	12(a6),a0
-	move.l	16(a6),d1
-	move.l	20(a6),d2
-	move.l	24(a6),d3
-	jsr		Audio_Play
+	move.l 8(a6),d0
+	move.l 12(a6),a0
+	move.l 16(a6),d1
+	move.l 20(a6),d2
+	move.l 24(a6),d3
+	jsr        Audio_Play
 	movem.l (sp)+,d0/a0/d1/d2/d3
 | 0 "" 2
 #NO_APP
@@ -797,7 +797,7 @@ SNDZEROPLAY:
 fadesingle:
 	link.w %fp,#0
 #APP
-| 789 "basic_functions.c" 1
+| 792 "basic_functions.c" 1
 		move.l d1,-(a7)
 	move.w 10(a6),d1
 	move.w 8(a6),d0
@@ -812,7 +812,7 @@ fadesingle:
 fadepal:
 	link.w %fp,#0
 #APP
-| 798 "basic_functions.c" 1
+| 801 "basic_functions.c" 1
 		movem.l d7/a1,-(a7)
 	move.l 16(a6),a1
 	move.l 12(a6),d7
@@ -955,27 +955,27 @@ SNDVOLRESET:
 _plot:
 	link.w %fp,#0
 #APP
-| 847 "basic_functions.c" 1
-	movem.l	d0-d4/a0,-(a6)
-				move.l	8(a7),d0
-				move.l	12(a7),d1
-				move.b	_plot_colour,d2
-				moveq	#15,d4
-				btst	#0,d0
-				beq.s	plot_even
-				lsr.b	#4,d2
-				moveq	#-16,d4
-	plot_even:	asr.w	#1,d0
-				lea		RAPTOR_particle_gfx,a0
-				add.w	d0,a0
-				move.w	d1,d3
-				asl.w	#5,d3
-				asl.w	#7,d1
-				add.w	d1,a0
-				add.w	d3,a0
-				and.b	d4,(a0)
-				or.b	d2,(a0)
-				movem.l	(a6)+,d0-d4/a0
+| 850 "basic_functions.c" 1
+	movem.l   d0-d4/a0,-(a6)
+	           move.l  8(a7),d0
+	           move.l  12(a7),d1
+	           move.b  _plot_colour,d2
+	           moveq   #15,d4
+	           btst    #0,d0
+	           beq.s   plot_even
+	           lsr.b   #4,d2
+	           moveq   #-16,d4
+	plot_even: asr.w   #1,d0
+	           lea     RAPTOR_particle_gfx,a0
+	           add.w   d0,a0
+	           move.w  d1,d3
+	           asl.w   #5,d3
+	           asl.w   #7,d1
+	           add.w   d1,a0
+	           add.w   d3,a0
+	           and.b   d4,(a0)
+	           or.b    d2,(a0)
+	           movem.l (a6)+,d0-d4/a0
 | 0 "" 2
 #NO_APP
 	unlk %fp
@@ -1011,11 +1011,11 @@ _GETPAD:
 _RSETLIST:
 	link.w %fp,#0
 #APP
-| 882 "basic_functions.c" 1
-	movem.l	d0-d7/a0-a6,-(a7)
-				move.l 8+60(sp),d0
-	    		jsr		RAPTOR_setlist
-				movem.l	(a7)+,d0-d7/a0-a6
+| 885 "basic_functions.c" 1
+	movem.l   d0-d7/a0-a6,-(a7)
+	           move.l 8+60(sp),d0
+	           jsr     RAPTOR_setlist
+	           movem.l (a7)+,d0-d7/a0-a6
 | 0 "" 2
 #NO_APP
 	unlk %fp
@@ -1025,8 +1025,8 @@ _RSETLIST:
 _RHIT:
 	link.w %fp,#0
 #APP
-| 890 "basic_functions.c" 1
-		movem.l	d1-d7/a0-a6,-(a7)
+| 893 "basic_functions.c" 1
+	  movem.l d1-d7/a0-a6,-(a7)
 | 0 "" 2
 #NO_APP
 	moveq #0,%d0
@@ -1036,14 +1036,14 @@ _RHIT:
 	move.l 16(%fp),raptor_targetl
 	move.l 20(%fp),raptor_targeth
 #APP
-| 896 "basic_functions.c" 1
-		lea		RAPTOR_GPU_COLLISION,a0
+| 899 "basic_functions.c" 1
+	  lea     RAPTOR_GPU_COLLISION,a0
 | 0 "" 2
-| 897 "basic_functions.c" 1
-		jsr 	RAPTOR_call_GPU_code
+| 900 "basic_functions.c" 1
+	  jsr     RAPTOR_call_GPU_code
 | 0 "" 2
-| 898 "basic_functions.c" 1
-		movem.l	(a7)+,d1-d7/a0-a6
+| 901 "basic_functions.c" 1
+	  movem.l (a7)+,d1-d7/a0-a6
 | 0 "" 2
 #NO_APP
 	move.l raptor_result,%d0
@@ -1094,10 +1094,10 @@ _RUPDALL:
 	cmp.l RUPDALL_FLAG.l,%d0
 	jeq .L69
 #APP
-| 924 "basic_functions.c" 1
-		movem.l	d0-d7/a0-a6,-(a7)
-	jsr		RAPTOR_wait_frame_UPDATE_ALL
-	movem.l	(a7)+,d0-d7/a0-a6
+| 927 "basic_functions.c" 1
+		movem.l d0-d7/a0-a6,-(a7)
+	jsr        RAPTOR_wait_frame_UPDATE_ALL
+	movem.l    (a7)+,d0-d7/a0-a6
 | 0 "" 2
 #NO_APP
 .L67:
@@ -1157,7 +1157,7 @@ _MODPLAY:
 	tst.l 8(%fp)
 	jlt .L82
 #APP
-| 951 "basic_functions.c" 1
+| 954 "basic_functions.c" 1
 	move.l 8(a6),a0
 	jsr RAPTOR_U235setmodule
 	jsr RAPTOR_U235gomodule_stereo
@@ -1175,12 +1175,41 @@ _SNDPLAY:
 	move.l 8(%fp),-8(%fp)
 	move.l 12(%fp),-4(%fp)
 #APP
-| 965 "basic_functions.c" 1
+| 969 "basic_functions.c" 1
 		move.l 8(a6),d0
 	move.l 12(a6),d1
-	movem.l d2-d7/a0-a5,-(sp)
-	jsr RAPTOR_U235playsample
-	movem.l (sp)+,d2-d7/a0-a5
+	|movem.l d2-d7/a0-a5,-(sp)
+	|move.l d2,-(sp)
+	|jsr RAPTOR_U235playsample
+	lea RAPTOR_Version,a0
+	lea U235SE_sfxplaylist_ptr,a1
+	moveq #0,d0
+	move.l d0,-(a0)
+	rol.w #4,d1
+	eor.l #0x3e800004,d1
+	rol.w #8,d0
+	or.w d0,d1
+	move.l d1,-(a0)
+	move.l raptor_samplebank_ptr,d0
+	lsl.l #4,d0
+	or.w #0xb,d0
+	move.l d0,-(a0)
+	move.l a0,(a1)
+	||move.l #((RAPTOR_samplebank<<4)+0xb),(a0)+
+	|move.l raptor_samplebank_ptr,d2
+	|lsl.l #4,d2
+	|or.w #0xb,d2
+	|move.l d2,(a0)+
+	|rol.w #4,d1
+	|eor.l #0x3e800004,d1
+	|rol.w #8,d0
+	|or.w d0,d1
+	|move.l d1,(a0)+
+	|moveq #0,d0
+	|move.l d0,(a0)
+	|move.l #raptor_playlist,(a1)
+	|move.l (sp)+,d2
+	|movem.l (sp)+,d2-d7/a0-a5
 | 0 "" 2
 #NO_APP
 	unlk %fp
@@ -1207,11 +1236,11 @@ _RPARTI:
 	add.l 8(%fp),%d0
 	move.l %d0,raptor_part_inject_addr
 #APP
-| 989 "basic_functions.c" 1
-	movem.l	d0-a6,-(a7)
-	lea		RAPTOR_particle_injection_GPU,a0
-	jsr 	RAPTOR_call_GPU_code
-	movem.l	(a7)+,d0-a6
+| 1022 "basic_functions.c" 1
+	movem.l   d0-a6,-(a7)
+	lea        RAPTOR_particle_injection_GPU,a0
+	jsr    RAPTOR_call_GPU_code
+	movem.l    (a7)+,d0-a6
 | 0 "" 2
 #NO_APP
 	unlk %fp
@@ -1223,10 +1252,10 @@ _RSETMAP:
 	move.l 8(%fp),raptor_map_position_x
 	move.l 12(%fp),raptor_map_position_y
 #APP
-| 999 "basic_functions.c" 1
-		movem.l	d0-d7/a0-a6,-(a7)
-	jsr		RAPTOR_map_set_position
-	movem.l	(a7)+,d0-d7/a0-a6
+| 1032 "basic_functions.c" 1
+	  movem.l d0-d7/a0-a6,-(a7)
+	jsr        RAPTOR_map_set_position
+	movem.l    (a7)+,d0-d7/a0-a6
 | 0 "" 2
 #NO_APP
 	unlk %fp
@@ -1244,15 +1273,15 @@ _RLOCATE:
 _RPRINT:
 	link.w %fp,#0
 #APP
-| 1013 "basic_functions.c" 1
-	movem.l	d0-d7/a0-a6,-(a7)
-	move.l	_basic_r_xpos,d0
-	move.l	_basic_r_ypos,d1
-	move.l	_basic_r_size,d2
-	move.l	_basic_r_indx,d3
-	move.l	_basic_r_buffer,a0
-	jsr		RAPTOR_print
-	movem.l	(a7)+,d0-d7/a0-a6
+| 1046 "basic_functions.c" 1
+	movem.l   d0-d7/a0-a6,-(a7)
+	move.l   _basic_r_xpos,d0
+	move.l   _basic_r_ypos,d1
+	move.l   _basic_r_size,d2
+	move.l   _basic_r_indx,d3
+	move.l   _basic_r_buffer,a0
+	jsr      RAPTOR_print
+	movem.l  (a7)+,d0-d7/a0-a6
 	
 | 0 "" 2
 #NO_APP
@@ -1263,7 +1292,7 @@ _RPRINT:
 _cls:
 	link.w %fp,#0
 #APP
-| 1026 "basic_functions.c" 1
+| 1059 "basic_functions.c" 1
 	movem.l d0/d1/a0,-(a7)
 	              lea RAPTOR_particle_gfx,a0
 	              move.l raptor_partbuf_x,d0

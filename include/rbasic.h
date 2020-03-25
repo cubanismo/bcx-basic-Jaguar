@@ -55,6 +55,7 @@ extern void rbsort(void *base,size_t nmemb) asm("rbsort");
 extern int raptor_blitter_use(int command) asm("raptor_blitter_use");
 extern int powaeeprom(int readwrite, void *buffer) asm ("powaeeprom");
 extern int U235SE_modregdump[4] asm("U235SE_modregdump");
+extern void *RAPTOR_samplebank asm ("RAPTOR_samplebank");
 
 //Zerosquare player equates
 #define Zero_Chan_Format_Shift      30

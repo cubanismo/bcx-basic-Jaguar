@@ -12,39 +12,39 @@
 '   during development.
 ' It's possible to partially automate this with ENUM.
 
+' particle/text layer                                        0
 
-DIM water%          :water=0                    '  1 object     total    0
-DIM background%     :background=water+1         '  1 object     total    1
-DIM poulpe1%        :poulpe1=background+1       '  1 object     total    2
-DIM poulpe2%        :poulpe2=poulpe1+1          '  1 object     total    3
-DIM poulpe3%        :poulpe3=poulpe2+1          '  1 object     total    4
-DIM poulpe4%        :poulpe4=poulpe3+1          '  1 object     total    5
-DIM poulpe5%        :poulpe5=poulpe4+1          '  1 object     total    6
-DIM poulpe6%        :poulpe6=poulpe5+1          '  1 object     total    7
-DIM poulpe7%        :poulpe7=poulpe6+1          '  1 object     total    8
-' particle/text layer                                                    9
-DIM nyan1%          :nyan1=poulpe7+2            '  1 object     total   10
-DIM nyan2%          :nyan2=nyan1+1              '  1 object     total   11
-DIM nyan3%          :nyan3=nyan2+1              '  1 object     total   12
-DIM nyan4%          :nyan4=nyan3+1              '  1 object     total   13
-DIM nyan5%          :nyan5=nyan4+1              '  1 object     total   14
-DIM nyan6%          :nyan6=nyan5+1              '  1 object     total   15
-DIM nyan7%          :nyan7=nyan6+1              '  1 object     total   16
-DIM nyan8%          :nyan8=nyan7+1              '  1 object     total   17
-DIM nyan9%          :nyan9=nyan8+1              '  1 object     total   18
-DIM nyan10%         :nyan10=nyan9+1             '  1 object     total   19
-DIM nyan11%         :nyan11=nyan10+1            '  1 object     total   20
-DIM nyan12%         :nyan12=nyan11+1            '  1 object     total   21
-DIM nyan13%         :nyan13=nyan12+1            '  1 object     total   22
-DIM nyan14%         :nyan14=nyan13+1            '  1 object     total   23
-DIM nyan15%         :nyan15=nyan14+1            '  1 object     total   24
-DIM doge%           :doge=nyan15+1              '  1 object     total   25
-DIM title%          :title=doge+1               '  1 object     total   26
-DIM dead%           :dead=title+1               '  1 object     total   27
-DIM dogeover1%      :dogeover1=dead+1           '  1 object     total   28
-DIM dogeover2%      :dogeover2=dogeover1+1      '  1 object     total   29
-DIM dogeover3%      :dogeover3=dogeover2+1  '  1 object     total   30
-DIM dogeover4%      :dogeover4=dogeover3+1  '  1 object     total   31
+DIM background%     :background=1   '  1 object     total    1
+DIM water%          :water=2        '  1 object     total    2
+DIM poulpe1%        :poulpe1=3      '  1 object     total    3
+DIM poulpe2%        :poulpe2=4      '  1 object     total    4
+DIM poulpe3%        :poulpe3=5      '  1 object     total    5
+DIM poulpe4%        :poulpe4=6      '  1 object     total    6
+DIM poulpe5%        :poulpe5=7      '  1 object     total    7
+DIM poulpe6%        :poulpe6=8      '  1 object     total    8
+DIM poulpe7%        :poulpe7=9      '  1 object     total    9
+DIM nyan1%          :nyan1=10       '  1 object     total   10
+DIM nyan2%          :nyan2=11       '  1 object     total   11
+DIM nyan3%          :nyan3=12       '  1 object     total   12
+DIM nyan4%          :nyan4=13       '  1 object     total   13
+DIM nyan5%          :nyan5=14       '  1 object     total   14
+DIM nyan6%          :nyan6=15       '  1 object     total   15
+DIM nyan7%          :nyan7=16       '  1 object     total   16
+DIM nyan8%          :nyan8=17       '  1 object     total   17
+DIM nyan9%          :nyan9=18       '  1 object     total   18
+DIM nyan10%         :nyan10=19      '  1 object     total   19
+DIM nyan11%         :nyan11=20      '  1 object     total   20
+DIM nyan12%         :nyan12=21      '  1 object     total   21
+DIM nyan13%         :nyan13=22      '  1 object     total   22
+DIM nyan14%         :nyan14=23      '  1 object     total   23
+DIM nyan15%         :nyan15=24      '  1 object     total   24
+DIM doge%           :doge=25        '  1 object     total   25
+DIM title%          :title=26       '  1 object     total   26
+DIM dead%           :dead=27        '  1 object     total   27
+DIM dogeover1%      :dogeover1=28   '  1 object     total   28
+DIM dogeover2%      :dogeover2=29   '  1 object     total   29
+DIM dogeover3%      :dogeover3=30   '  1 object     total   30
+DIM dogeover4%      :dogeover4=31   '  1 object     total   31
 
 ' ****************************************************
 ' * REMAINING GLOBAL VARIABLES USED IN DOGER GAME    *
@@ -66,46 +66,7 @@ DIM nyancheck%          :   nyancheck=0
 DIM nyanaddy%           :   nyanaddy=0
 DIM nyancount%          :   nyancount=0
 DIM i%                  :   i=0
-DIM j%                  :   j=0
-DIM poulpe_x_pull%      :   poulpe_x_pull=0
-DIM poulpe_y_pull%      :   poulpe_y_pull=0
 
-' ****************************************************
-' * CREATE SOME PARTICLE STUFF                       *
-' ****************************************************
-
-DIM x%                  :   x=164
-DIM y%                  :   y=132
-DIM x2%                 :   x2=0
-DIM y2%                 :   y2=0
-DIM parts%              :   parts=16
-DIM trigger%            :   trigger=0
-DIM counter%            :   counter=0
-DIM pad1%               :   pad1=0
-DIM speed%              :   speed=2
-DIM initial%            :   initial=15
-DIM randoms%            :   randoms=0
-DIM random1%            :   random1=0
-DIM random2%            :   random2=0
-DIM random3%            :   random3=0
-DIM particount%         :   particount=0
-
-DIM particles%[8,17,6]
-
-FOR j=1 TO 7
-    particles[j,0,3]=(x+x2)<<16
-    particles[j,0,4]=(y+y2)<<16
-    particles[j,0,5]=parts
-
-    FOR i=1 TO parts
-        particles[j,i,0]=420+int(RND*64)
-        particles[j,i,1]=speed                      ' speed
-        particles[j,i,2]=-1                         ' angular speed
-        particles[j,i,3]=initial                    ' initial colour
-        particles[j,i,4]=1                          ' colour decay (per frame)
-        particles[j,i,5]=int(RND*24)                ' pixel life (in frames)
-    NEXT i
-NEXT j
 
 ' ****************************************************
 ' * LOAD COLOURS FOR EACH GRAPHIC INTO THE CLUT      *
@@ -133,6 +94,7 @@ nyanaddy=RGETOBJ(nyan1,R_sprite_gfxbase)
 ' * MAIN GAME LOOP                                   *
 ' ****************************************************
 DO
+'   nyancount++
     
     IF gamestart=0 THEN                                             ' The title screen will display at start and only allow the game to continue once the called
         CALL waitforplayertostart                                   '   subroutine has its conditions met (push the button!). As gamestart is set to 1 this never
@@ -143,7 +105,12 @@ DO
     doge_x=RGETOBJ(doge,R_sprite_x)                                 ' Put the Doge's current x position in our x-tracker.
     doge_y=RGETOBJ(doge,R_sprite_y)                                 ' Put the Doge's current y position in our y-tracker.
 
-    CALL movedoge                                                   ' Handle Doge movement.
+'   IF framecounter=>8 THEN                                         ' Check to see if 8 frames have ticked over.
+        CALL movedoge                                               ' If so, let the Doge move again - it prevents Doge running wild like a wild Doge.
+'       framecounter=0                                              ' Reset the counter for next time.
+'   ENDIF
+    
+    VSYNC                                                           ' Sync to screen refresh.
         
     IF doge_y>=(128<<16) THEN                                       ' If Doge is in bottom half of screen, check if he hits a Nyancat.
         CALL checknyancollide
@@ -156,8 +123,6 @@ DO
     CALL nyanswitch
     
     framecounter++                                                  ' Add 1 to the frame counter. It ticks over as screen refreshes.
-    
-    VSYNC                                                           ' Sync to screen refresh.
 LOOP
 
 
@@ -166,57 +131,45 @@ LOOP
 ' * SUBROUTINES                                      *
 ' ****************************************************
 
-SUB doparts
-    FOR i=0 TO 6
-        poulpe_x_pull=RGETOBJ(i+poulpe1,R_sprite_x)
-        poulpe_y_pull=RGETOBJ(i+poulpe1,R_sprite_y)
-        particles[i,0,3]=poulpe_x_pull+(64<<16)
-        particles[i,0,4]=poulpe_y_pull+(14<<16)
-    RPARTI(strptr(particles[i]))
-    NEXT i
-END SUB
-
-' ****************************************************
-
 SUB nyanswitch
 
-    FOR i=nyan1 TO nyan9
-        nyancheck=RGETOBJ(i,R_sprite_x)
-        IF nyancheck<(88<<16) THEN
-            RSETOBJ(i,R_sprite_gfxbase,nyanaddy)
-        ENDIF
-        IF nyancheck>=(88<<16) AND nyancheck<(136<<16) THEN
-            RSETOBJ(i,R_sprite_gfxbase,nyanaddy+(3072))
-        ENDIF
-        IF nyancheck>=(136<<16) AND nyancheck<(184<<16) THEN
-            RSETOBJ(i,R_sprite_gfxbase,nyanaddy+(3072*2))
-        ENDIF
-        IF nyancheck>=(184<<16) AND nyancheck<(232<<16) THEN
-            RSETOBJ(i,R_sprite_gfxbase,nyanaddy+(3072*3))
-        ENDIF   
-        IF nyancheck>=(232<<16) THEN
-            RSETOBJ(i,R_sprite_gfxbase,nyanaddy+(3072*4))
-        ENDIF
-    NEXT i
+FOR i=nyan1 TO nyan9
+    nyancheck=RGETOBJ(i,R_sprite_x)
+    IF nyancheck<(88<<16) THEN
+        RSETOBJ(i,R_sprite_gfxbase,nyanaddy)
+    ENDIF
+    IF nyancheck>=(88<<16) AND nyancheck<(136<<16) THEN
+        RSETOBJ(i,R_sprite_gfxbase,nyanaddy+(3072))
+    ENDIF
+    IF nyancheck>=(136<<16) AND nyancheck<(184<<16) THEN
+        RSETOBJ(i,R_sprite_gfxbase,nyanaddy+(3072*2))
+    ENDIF
+    IF nyancheck>=(184<<16) AND nyancheck<(232<<16) THEN
+        RSETOBJ(i,R_sprite_gfxbase,nyanaddy+(3072*3))
+    ENDIF   
+    IF nyancheck>=(232<<16) THEN
+        RSETOBJ(i,R_sprite_gfxbase,nyanaddy+(3072*4))
+    ENDIF
+NEXT i
 
-    FOR i=nyan10 TO nyan15
-        nyancheck=RGETOBJ(i,R_sprite_x)
-        IF nyancheck<(88<<16) THEN
-            RSETOBJ(i,R_sprite_gfxbase,nyanaddy+(3072*4))
-        ENDIF
-        IF nyancheck>=(88<<16) AND nyancheck<(136<<16) THEN
-            RSETOBJ(i,R_sprite_gfxbase,nyanaddy+(3072*3))
-        ENDIF
-        IF nyancheck>=(136<<16) AND nyancheck<(184<<16) THEN
-            RSETOBJ(i,R_sprite_gfxbase,nyanaddy+(3072*2))
-        ENDIF
-        IF nyancheck>=(184<<16) AND nyancheck<(232<<16) THEN
-            RSETOBJ(i,R_sprite_gfxbase,nyanaddy+(3072))
-        ENDIF   
-        IF nyancheck>=(232<<16) THEN
-            RSETOBJ(i,R_sprite_gfxbase,nyanaddy)
-        ENDIF
-    NEXT i
+FOR i=nyan10 TO nyan15
+    nyancheck=RGETOBJ(i,R_sprite_x)
+    IF nyancheck<(88<<16) THEN
+        RSETOBJ(i,R_sprite_gfxbase,nyanaddy+(3072*4))
+    ENDIF
+    IF nyancheck>=(88<<16) AND nyancheck<(136<<16) THEN
+        RSETOBJ(i,R_sprite_gfxbase,nyanaddy+(3072*3))
+    ENDIF
+    IF nyancheck>=(136<<16) AND nyancheck<(184<<16) THEN
+        RSETOBJ(i,R_sprite_gfxbase,nyanaddy+(3072*2))
+    ENDIF
+    IF nyancheck>=(184<<16) AND nyancheck<(232<<16) THEN
+        RSETOBJ(i,R_sprite_gfxbase,nyanaddy+(3072))
+    ENDIF   
+    IF nyancheck>=(232<<16) THEN
+        RSETOBJ(i,R_sprite_gfxbase,nyanaddy)
+    ENDIF
+NEXT i
 
 END SUB
 
@@ -276,7 +229,6 @@ SUB dogekennels                                                     ' We arrive 
 
     IF doge_x=>(41<<16) AND doge_x<=(50<<16) AND doge1flag=0 THEN   ' The Doge is smaller than its 32-wide image, therefore we can allow a little leeway for entry.
         RSETOBJ(doge,R_sprite_xadd,0)                               ' Kill the Doge drift, he won't be sitting on the raft now.
-        RSETOBJ(doge,R_sprite_active,R_is_inactive)
         RSETOBJ(dogeover1,R_sprite_x,(48<<16))                      ' Position the Doge-a-like copy graphics sprite in kennel #1.
         RSETOBJ(dogeover1,R_sprite_y,(26<<16))
         doge1flag=1                                                 ' Flag that the Doge has entered this kennel
@@ -287,7 +239,6 @@ SUB dogekennels                                                     ' We arrive 
     
     IF doge_x=>((41+64)<<16) AND doge_x<=((50+64)<<16) AND doge2flag=0 THEN             ' Same process as above, but for next gap along and 2nd Doge copy gfx.
         RSETOBJ(doge,R_sprite_xadd,0)
-        RSETOBJ(doge,R_sprite_active,R_is_inactive)
         RSETOBJ(dogeover2,R_sprite_x,((48+64)<<16))
         RSETOBJ(dogeover2,R_sprite_y,(26<<16))
         doge2flag=1
@@ -298,7 +249,6 @@ SUB dogekennels                                                     ' We arrive 
     
     IF doge_x=>((41+64+64)<<16) AND doge_x<=((50+64+64)<<16) AND doge3flag=0 THEN       ' Same process as above, but for next gap along and 3rd Doge copy gfx
         RSETOBJ(doge,R_sprite_xadd,0)                                                   '   and flip the sprite so he faces the centre.
-        RSETOBJ(doge,R_sprite_active,R_is_inactive)
         RSETOBJ(dogeover3,R_sprite_x,((48+64+64)<<16))
         RSETOBJ(dogeover3,R_sprite_y,(26<<16))
         RSETOBJ(dogeover3,R_sprite_flip,R_is_flipped)
@@ -310,7 +260,6 @@ SUB dogekennels                                                     ' We arrive 
     
     IF doge_x=>((41+64+64+64)<<16) AND doge_x<=((50+64+64+64)<<16) AND doge4flag=0 THEN ' Same process as above, but for next gap along and 4th Doge copy gfx
         RSETOBJ(doge,R_sprite_xadd,0)                                                   '   and flip the sprite so he faces the centre.
-        RSETOBJ(doge,R_sprite_active,R_is_inactive)
         RSETOBJ(dogeover4,R_sprite_x,((48+64+64+64)<<16))
         RSETOBJ(dogeover4,R_sprite_y,(26<<16))
         RSETOBJ(dogeover4,R_sprite_flip,R_is_flipped)
@@ -356,7 +305,7 @@ SUB checkpoulpecollide                                              ' This is wh
         EXIT SUB                                                    '   back to the normal game loop after resetting his x-drift value.
     ENDIF                               
     
-    IF RHIT(poulpe1,poulpe7,doge,doge)<>1 THEN                      ' Check poulpe vs doge for collisions. This =-1 when the sprites collide. Doge is set to
+    IF RHIT(poulpe1,poulpe7,doge,doge)<>1 THEN                      ' Check poulpe vs doge for collisions. This =1 when the sprites collide. Doge is set to
                                                                     '   "0 hits to death" which sounds a bit drastic(!), but we're using the CD in reverse
                                                                     '   here (i.e., Doge will die if he's NOT colliding) and we're not checking for any specifics
                                                                     '   (not interested in which poulperaft he's on, only that he's on one). We just use the returned
@@ -380,14 +329,12 @@ SUB resetdoge                                                       ' Put Doge b
     doge_x=doge_x_init
     doge_y=doge_y_init
     RSETOBJ(doge,R_sprite_was_hit,-1)
-    RSETOBJ(doge,R_sprite_active,R_is_active)
     
     IF doge1flag=1 AND doge2flag=1 AND doge3flag=1 AND doge4flag=1 THEN ' If all flags are sat, all Doges are home, so game is won!
         DO
-            RSETOBJ(doge,R_sprite_active,R_is_inactive)
             RLOCATE int(RND*260),156                                        ' Use RNG to give us a random pixel for x and print some text to the screen using it.
-            PRINT "WELL DOGE!"                                              ' RNG gives back a number between 0 and 1, so if we multiply this by our maximum, 
-                                                                            ' we get 0 to max. int(number) converts a floating point number to a whole number.
+            RPRINT "WELL DOGE!"                                             ' RNG gives back a number between 0 and 1, so if we multiply this by our maximum, we get 0-max.
+                                                                            ' int(number) converts a floating point number to a whole number.
             
             SNDPLAY(1,5)                                                    ' Play sound 1 on channel 5
             SNDFREQ(5,12000)                                                ' Set replay freq on channel 5 to 12000Hz
@@ -403,7 +350,7 @@ END SUB
 ' ****************************************************
 
 SUB checknyancollide                                                ' This is where we check for Doge being attacked by nyancats.
-    IF RHIT(doge,doge,nyan1,nyan15)<>-1 THEN                        ' If there's a collision (1 is returned by the RHIT command to signify that *something* was hit
+    IF RHIT(doge,doge,nyan1,nyan15)<>-1 THEN                        ' If there's a collision (-1 is returned by the RHIT command to signify that *something* was hit
         CALL resetdoge                                              ' Knowing there was some kind of collision is good enough for this game, we don't need to go
         CALL showangrydoge                                          '   and check which particular one was hit, it's of no use. So we simply call to reset the Doge
     ENDIF                                                           '   and call to display the annoying death screen.

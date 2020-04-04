@@ -162,7 +162,7 @@ Input_Read:
                     endif
 			
 			;		"0123456789012345678901234567890123456789"
-init_txt:	dc.b	"wow                                     ",raptor_t_lf,raptor_t_font_siz,0
+init_txt:	dc.b	"                                        ",raptor_t_lf,raptor_t_font_siz,0
 			dc.b	"                                        "
 			dc.b	raptor_t_quit
 			.even

@@ -2080,6 +2080,7 @@ raptor_init_table:
 																
 
 																
+	include	"partlist.s"	; Include the TEXT/PARTICLE layer bitmap
 																
 																
 

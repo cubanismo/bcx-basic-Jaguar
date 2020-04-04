@@ -19,7 +19,7 @@
 	dc.l	RAPTOR_particle_gfx												; sprite_gfxbase	; start of bitmap data
 	dc.l	4																; (BIT DEPTH)		; bitmap depth (1/2/4/8/16/24)
 	dc.l	is_RGB															; (cry/RGB)			; bitmap GFX type
-	dc.l	is_opaque														; (TRANSPARENCY)	; bitmap TRANS flag
+	dc.l	is_trans														; (TRANSPARENCY)	; bitmap TRANS flag
 	dc.l	(raptor_particle_buffer_width/2)*raptor_particle_buffer_height	; sprite_framesz	; size per frame in bytes of sprite data
 	dc.l	raptor_particle_buffer_width/2									; sprite_bytewid	; width in bytes of one line of sprite data
 	dc.l	0																; sprite_animspd	; frame delay between animation changes

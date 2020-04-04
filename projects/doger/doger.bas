@@ -46,6 +46,9 @@ DIM dogeover2%      :dogeover2=29   '  1 object     total   29
 DIM dogeover3%      :dogeover3=30   '  1 object     total   30
 DIM dogeover4%      :dogeover4=31   '  1 object     total   31
 
+basic_r_indx=0
+basic_r_size=0
+
 ' ****************************************************
 ' * REMAINING GLOBAL VARIABLES USED IN DOGER GAME    *
 ' ****************************************************

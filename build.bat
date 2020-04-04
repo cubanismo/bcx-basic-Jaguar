@@ -180,10 +180,10 @@ rem -------------------------------------------------------------
 rem Compile C code
 echo. >> %TEMPDIR%\build.log
 echo Compiling C code... >> %TEMPDIR%\build.log
-m68k-atari-mint-gcc -O2 -I"%RBTOOLS%\include" -I%BUILDPATH%\ -c %TEMPDIR%\%PROJECTNAME%.c -o %TEMPDIR%\%PROJECTNAME%.o >> %TEMPDIR%\build.log 2>&1
+m68k-atari-mint-c++ -x c++ -O2 -I"%RBTOOLS%\include" -I%BUILDPATH%\ -c %TEMPDIR%\%PROJECTNAME%.c -o %TEMPDIR%\%PROJECTNAME%.o >> %TEMPDIR%\build.log 2>&1
 if %ERRORLEVEL% NEQ 0 goto :builderror
 if not exist %TEMPDIR%\%PROJECTNAME%.o goto :builderror
-m68k-atari-mint-gcc -O2 -I"%RBTOOLS%\include" -I%BUILDPATH%\ %TEMPDIR%\%PROJECTNAME%.c -S -o %TEMPDIR%\%PROJECTNAME%.s >> %TEMPDIR%\build.log 2>&1
+m68k-atari-mint-c++ -x c++ -O2 -I"%RBTOOLS%\include" -I%BUILDPATH%\ %TEMPDIR%\%PROJECTNAME%.c -S -o %TEMPDIR%\%PROJECTNAME%.s >> %TEMPDIR%\build.log 2>&1
 if /i "%2" neq "ROM" (if "%ROM_MODE%"=="" goto :norom)
 
 rem -------------------------------------------------------------

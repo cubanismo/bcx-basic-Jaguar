@@ -221,9 +221,9 @@ Colours
 ====================================================== ===========
 Command                                                Description
 ====================================================== ===========
-loadclut palette_address,target_clut_number_of_indices takes the palette values at address "palette_address" and
-                                                       copies them to CLUT "target_clut_number" (0 to 15).
-                                                       *clut_number_of_indices* tells the routine how many to copy.
+loadclut palette_address,target_clut,number_of_indices takes the palette values at address "palette_address" and
+                                                       copies them to CLUT "target_clut" (0 to 15).
+                                                       *number_of_indices* tells the routine how many to copy.
                                                        This routine can be used to set up anything from 2 to 256 palette indices at once.
 fadepal(int clut_no,int fade_cols,int \*palette)       fades CLUT *clut_no* (0-15) to CLUT values address *palette*.
                                                        *fade_cols* is the number of CLUT entries to process.

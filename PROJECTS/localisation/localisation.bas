@@ -42,9 +42,9 @@ messages$[Italian][msg_hi]="Ciao "
 messages$[English][msg_bye]="Bye      "
 messages$[French] [msg_bye]="Au revoir"
 messages$[Italian][msg_bye]="Addio    "
-messages$[English][msg_win]="You win!    "
-messages$[French] [msg_win]="Vous gagnez!"
-messages$[Italian][msg_win]="Hai vinto!  "
+messages$[English][msg_win]="You win    "
+messages$[French] [msg_win]="Vous gagnez"
+messages$[Italian][msg_win]="Hai vinto  "
 messages$[English][msg_lose]="You lose   "
 messages$[French] [msg_lose]="Tu as perdu"
 messages$[Italian][msg_lose]="Hai presso "
@@ -52,9 +52,12 @@ messages$[English][msg_ready]="Get ready"
 messages$[French] [msg_ready]="Sois pret"
 messages$[Italian][msg_ready]="Preparati"
 
-
 rlocate 0,0
 rprint "Press A,B,C to switch languages"
+
+rlocate 0,190
+rprint convert_utf8("Special characters can work... êâîôûù")
+
 
 do
     local i as short
@@ -74,9 +77,50 @@ do
     rlocate 0,16
     RPRINT message_pressfire$[language]
     
-    ' Print all our "mulriple strings" example. Notice that num_messages will adjust itself if we add or remove messages.
+    ' Print all our "multiple strings" example. Notice that num_messages will adjust itself if we add or remove messages.
     for i=0 to num_messages
         rlocate 0,32+8*i
-        rprint messages$[language][i]
+        rprint convert_utf8(messages$[language][i])
     next i
 loop
+
+dim lol$
+dim i as short
+
+function convert_utf8$(string$)
+    local c as UBYTE
+    local d as UBYTE
+    local i as short
+    local j as short
+    local converted$
+    j=0
+    
+    for i=0 to len(string$)
+        c=peek(((int)string$)+i)
+        if c=0xc3 then
+            d=peek(((int)string$)+i+1)
+            select case d
+                case 0xaa 'ê
+                    c=41
+                case 0xa2 'â
+                    c=36
+                case 0xae 'î
+                    c=60
+                case 0xb4 'ô
+                    c=43
+                case 0xbb 'û
+                    c=125
+                case 0xb9 'ù
+                    c=126
+                case else
+                    'We don't know this character. Just turn it into A?
+                    c=65
+            end select
+            i++     'move past $c3
+        endif
+        poke strptr(converted$)+j,c
+        j++
+    next i
+    poke (strptr(converted$)+j),0
+    function=converted$
+end function

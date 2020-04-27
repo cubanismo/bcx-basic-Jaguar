@@ -1,3 +1,4 @@
+- Added localisation example which shows a few ways to deal with localisation strings
 - Added gridsprite project which illustrates drawing tiles on a grid, getting player position and the use of random numbers
 - Fixed long standing issue in str$()
 - Added an "infinite" vertical scroller example

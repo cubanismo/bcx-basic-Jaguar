@@ -27,7 +27,7 @@ raptor_init_table:
 	dc.b	'LIST'		; initiate list structure
 
 
-; Template
+; Picture 1
 	dc.l	1								; (REPEAT COUNTER) 				; Create this many objects of this type (or 1 for a single object)
 	dc.l	is_active						; sprite_active					; sprite active flag
 	dc.w	16,0							; sprite_x						; 16.16 x value to position at
@@ -66,6 +66,7 @@ raptor_init_table:
 	dc.l	2								; sprite_damage					; Hitpoints deducted from target
 	dc.l	320/2							; sprite_gwidth					; GFX width (of data)	
 
+; Picture 2
 	dc.l	1								; (REPEAT COUNTER) 				; Create this many objects of this type (or 1 for a single object)
 	dc.l	is_active						; sprite_active					; sprite active flag
 	dc.w	16,0							; sprite_x						; 16.16 x value to position at
@@ -104,6 +105,7 @@ raptor_init_table:
 	dc.l	2								; sprite_damage					; Hitpoints deducted from target
 	dc.l	320/2							; sprite_gwidth					; GFX width (of data)	
 
+; Picture 3
 	dc.l	1								; (REPEAT COUNTER) 				; Create this many objects of this type (or 1 for a single object)
 	dc.l	is_active						; sprite_active					; sprite active flag
 	dc.w	16,0							; sprite_x						; 16.16 x value to position at
@@ -142,6 +144,7 @@ raptor_init_table:
 	dc.l	2								; sprite_damage					; Hitpoints deducted from target
 	dc.l	320/2							; sprite_gwidth					; GFX width (of data)	
 
+; Picture 4
 	dc.l	1								; (REPEAT COUNTER) 				; Create this many objects of this type (or 1 for a single object)
 	dc.l	is_active						; sprite_active					; sprite active flag
 	dc.w	16,0							; sprite_x						; 16.16 x value to position at
@@ -180,6 +183,7 @@ raptor_init_table:
 	dc.l	2								; sprite_damage					; Hitpoints deducted from target
 	dc.l	320/2							; sprite_gwidth					; GFX width (of data)	
 
+; Text layer - has to be at the end!
 	dc.l	1																; (REPEAT COUNTER) 	; Create this many objects of this type (or 1 for a single object)
 	dc.l	is_active														; sprite_active		; sprite active flag
 	dc.w	16,0															; sprite_x			; 16.16 x value to position at

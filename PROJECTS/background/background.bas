@@ -22,6 +22,10 @@ dim i as short
 loadclut(strptr(back1_clut),0,16)
 rlist[0].y=16<<16
 
+' Initially all pictures except the first are off screen.
+' After waiting for about 1 second we move the current picture
+' off screen and then move the next one into screen view.
+' The text object is last in our rapinit.s list.
 do
     for i=0 to 59
     vsync
